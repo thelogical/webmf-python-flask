@@ -8,6 +8,12 @@ class TestHello(unittest.TestCase):
         app.app.testing = True
         self.app = app.app.test_client()
 
+    def test_add(self):
+        rv = self.app.get('/add/3/4')
+        self.assertEqual(rv.status, '200 OK')
+        self.assertEqual(rv.data, b'7')
+
+
     def test_hello(self):
         rv = self.app.get('/')
         self.assertEqual(rv.status, '200 OK')

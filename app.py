@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import datetime
 from flask import Flask
 app = Flask(__name__)
 
@@ -7,6 +8,20 @@ app = Flask(__name__)
 @app.route('/hello/')
 def hello_world():
     return 'Hello World!\n'
+
+@app.route('/hour/')
+def getdate():
+    k = datetime.datetime.now()
+    return 'The hour is ' + str(k.hour)
+
+@app.route('/add/<a>/<b>')
+def add(a,b):
+    
+    try:
+        sm = int(a) + int(b)
+        return str(sm)
+    except:
+        return "The url should only be in format /add/a/b where a and b are strictly numbers"
 
 @app.route('/hello/<username>') # dynamic route
 def hello_user(username):
