@@ -1,12 +1,20 @@
 pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
+  agent { docker { image 'python:3.7.6' } }
+  stages {
+    stage('build') {
+      steps {
+        sh 'pip install -r requirements.txt'
+      }
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
+    stage('test') {
+      steps {
+        sh 'python3 test.py'
+      }
+      post {
+        always {
+          junit 'test-results/*.xml'
         }
+      }    
     }
+  }
 }
