@@ -32,6 +32,6 @@ class TestHello(unittest.TestCase):
 
 if __name__ == '__main__':
     import xmlrunner
-    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    runner = xmlrunner.XMLTestRunner(output='test-results')
     unittest.main(testRunner=runner)
     unittest.main()
