@@ -35,3 +35,5 @@ if __name__ == '__main__':
     runner = xmlrunner.XMLTestRunner(output='test-results')
     unittest.main(testRunner=runner)
     unittest.main()
+
+print("Module name is",__name__)
