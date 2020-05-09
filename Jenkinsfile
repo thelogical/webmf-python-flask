@@ -27,6 +27,8 @@ pipeline {
           currentBuild.result == null || currentBuild.result == 'SUCCESS' 
         }
       }
+      def dockerHome = tool 'docker'
+      env.PATH = "${dockerHome}/bin:${env.PATH}"
       steps {
         sh 'docker rm flaskapp'
         sh 'docker build -t flaskimage .'
