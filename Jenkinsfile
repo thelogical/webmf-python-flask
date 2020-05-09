@@ -1,9 +1,9 @@
 pipeline {
-  agent { docker { image 'python:3.7.6' } }
+  agent { dockerfile true}
   stages {
     stage('build') {
       steps {
-        sh 'pip install -r requirements.txt'
+        sh 'curl -L localhost:5000'
       }
     }
     stage('test') {
