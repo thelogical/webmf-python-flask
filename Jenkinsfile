@@ -22,7 +22,7 @@ pipeline {
       }    
     }
     stage('Deploy') {
-      agent any
+      agent { label 'docker' }
       steps {
         sh 'docker --version'
       }
