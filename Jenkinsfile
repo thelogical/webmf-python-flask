@@ -22,15 +22,9 @@ pipeline {
       }    
     }
     stage('Deploy') {
-      when {
-        expression {
-          currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-        }
-      }
+      agent any
       steps {
-        sh 'docker rm flaskapp'
-        sh 'docker build -t flaskimage .'
-        sh 'docker run -p 5000:5000 flaskimage --name flaskapp'
+        sh 'docker --version'
       }
   }
  }
