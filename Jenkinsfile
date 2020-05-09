@@ -21,10 +21,6 @@ pipeline {
         }
       }    
     }
-    stage('InitialDeployment') {
-       def dockerHome = tool 'myDocker'
-       env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
     stage('Deploy') {
       when {
         expression {
