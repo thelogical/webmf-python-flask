@@ -22,7 +22,9 @@ pipeline {
       }    
     }
     stage('Deploy') {
-      sh 'which ls'
-  }
+      steps {
+        sh 'which ls'
+      }
+    }
  }
 }
