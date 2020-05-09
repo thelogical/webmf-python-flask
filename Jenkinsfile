@@ -1,10 +1,10 @@
 pipeline {
-  agent { 
-    docker { 
-       dockerfile true 
-       args  "--entrypoint='' "
-           }
-        }
+  agent {
+    dockerfile {
+      filename "Dockerfile"
+      args '-i --entrypoint='
+               }
+        }  
   stages {
     stage('build') {
       steps {
