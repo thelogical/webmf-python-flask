@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'which ls'
+        sh 'which docker'
       }
     }
  }
