@@ -24,8 +24,7 @@ pipeline {
     stage('Deploy') {
       agent { label 'master' }
       steps {
-        sh 'ls /usr/bin'
-        echo 'docker path above'
+        echo $PATH
       }
   }
  }
