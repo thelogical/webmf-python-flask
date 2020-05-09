@@ -24,8 +24,8 @@ pipeline {
     stage('Deploy') {
       agent { label 'master' }
       steps {
-        sh 'ls'
-        sh 'pwd'
+        sh 'which docker'
+        sh 'docker path above'
       }
   }
  }
