@@ -22,10 +22,7 @@ pipeline {
       }    
     }
     stage('Deploy') {
-      agent { label 'master' }
-      steps {
-        echo $PATH
-      }
+      sh 'which ls'
   }
  }
 }
