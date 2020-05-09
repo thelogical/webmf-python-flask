@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'curl -L localhost:5000'
+        echo 'hello world'
+        sh 'echo myCustomEnvVar = $myCustomEnvVar'
       }
     }
     stage('test') {
