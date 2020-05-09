@@ -24,7 +24,8 @@ pipeline {
     stage('Deploy') {
       agent { label 'master' }
       steps {
-        sh 'docker --version'
+        sh 'ls'
+        sh 'pwd'
       }
   }
  }
