@@ -21,5 +21,16 @@ pipeline {
         }
       }    
     }
+    stage('Deploy') {
+      when {
+        expression {
+          currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+        }
+      }
+      steps {
+        sh 'sudo docker rm flaskapp'
+        sh 'sudo docker build -t flaskimage .'
+        sh 'sudo docker run -p 5000:5000 flaskimage --name flaskapp'
+      }
   }
 }
