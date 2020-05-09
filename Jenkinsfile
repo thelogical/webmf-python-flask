@@ -28,9 +28,9 @@ pipeline {
         }
       }
       steps {
-        sh 'sudo docker rm flaskapp'
-        sh 'sudo docker build -t flaskimage .'
-        sh 'sudo docker run -p 5000:5000 flaskimage --name flaskapp'
+        sh 'docker rm flaskapp'
+        sh 'docker build -t flaskimage .'
+        sh 'docker run -p 5000:5000 flaskimage --name flaskapp'
       }
   }
  }
