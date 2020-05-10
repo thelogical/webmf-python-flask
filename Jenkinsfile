@@ -23,7 +23,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'which docker'
+        sh 'echo $PATH'
+        sh 'whoami'
       }
     }
  }
