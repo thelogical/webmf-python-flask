@@ -23,6 +23,16 @@ def add(a,b):
     except:
         return "The url should only be in format /add/a/b where a and b are strictly numbers"
 
+@app.route('/sub/<a>/<b>')
+def sub(a,b):
+
+    try:
+        sm = int(a) - int(b)
+        return str(sm)
+    except:
+        return "The url should only be in format /add/a/b where a and b are strictly numbers"
+
+
 @app.route('/hello/<username>') # dynamic route
 def hello_user(username):
     # show the user profile for that user
