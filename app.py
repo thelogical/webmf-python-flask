@@ -9,6 +9,11 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!\n'
 
+
+@app.route('/version')
+def getvers():
+    return 'The version is 1.0'
+
 @app.route('/hour/')
 def getdate():
     k = datetime.datetime.now()
@@ -39,4 +44,4 @@ def hello_user(username):
     return 'Why Hello %s!\n' % username
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')  # open for everyone
+    app.run(host='0.0.0.0',port=1997)  # open for everyone

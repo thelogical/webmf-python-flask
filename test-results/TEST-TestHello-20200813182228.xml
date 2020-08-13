@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestHello-20200813182228" tests="4" time="0.006">
+	<testcase classname="TestHello" name="test_hello" time="0.001"/>
+	<testcase classname="TestHello" name="test_hello_hello" time="0.001"/>
+	<testcase classname="TestHello" name="test_hello_name" time="0.001"/>
+	<testcase classname="TestHello" name="test_add" time="0.004">
+		<error message="b'-1' != b'7'" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "test.py", line 14, in test_add
+    self.assertEqual(rv.data, b'7')
+AssertionError: b'-1' != b'7'
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

@@ -1,4 +1,8 @@
 cd /usr/src/app
 rm -rf test-results
 python test.py > /dev/null
-python test_reports.py
+if python test_reports.py; then
+    exit 0
+else
+    exit $?
+fi
