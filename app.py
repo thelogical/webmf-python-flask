@@ -12,7 +12,7 @@ def hello_world():
 
 @app.route('/version')
 def getvers():
-    return 'The version is 2.0'
+    return 'The version is 2.01'
 
 @app.route('/hour/')
 def getdate():
